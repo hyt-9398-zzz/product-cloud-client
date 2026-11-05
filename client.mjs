@@ -18,7 +18,8 @@ export async function readProducts(input,{fetcher=fetch,origin=globalThis.locati
   if(!Array.isArray(rows))throw Error('CLIENT_RESPONSE');
   const items=rows.slice(0,5).map(row=>row.Item??row);
   const serialized=JSON.stringify(items);
-  if(serialized.includes(input.accessKey)||serialized.includes(input.applicationId))throw Error('CLIENT_SECRET_ECHO');
+  if(serialized.includes(input.accessKey))throw Error('CLIENT_ACCESS_KEY_ECHO');
+  if(serialized.includes(input.applicationId))throw Error('CLIENT_APPLICATION_ID_ECHO');
   return {fetchedAt:new Date().toISOString(),items,requestCount:1};
 }
 if(typeof window!=='undefined'){
