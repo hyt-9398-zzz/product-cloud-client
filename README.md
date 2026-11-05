@@ -1,2 +1,13 @@
-# rakuten-cloud-client
-Public browser client for a bounded Rakuten connectivity test. No credentials included.
+# 楽天Web接続の検証用クライアント
+
+GitHub Pages上の本人管理ページを、クラウドの独立したブラウザーから開いて楽天APIへ商品検索を行うための検証コードです。通常の閲覧ではAPIを呼びません。実際の接続は未検証で、全自動投稿の完成品ではありません。
+
+公開予定ファイルは `index.html` と `client.mjs` とこのREADMEです。認証情報・商品データ・投稿履歴は含めません。アプリIDとアクセスキーは実行時の関数引数としてのみ受け取り、保存領域へ書き出しません。アクセスキーはAPIのヘッダーにのみ送ります。
+
+想定Origin：`https://hyt-9398-zzz.github.io`。楽天に別のWeb Applicationを登録し、本人の許可したドメインと一致する場合にのみ検証を進めます。元のPC用アプリは変更しません。
+
+Origin・Refererの偽装、ブラウザーのCORS保護無効化は行いません。実接続が拒否されたら停止します。
+
+認証値を扱う処理では、ブラウザーのコンソール・HAR・動画・トレース・スクリーンショットを収集しないでください。新しいブラウザーコンテキストを各回作成し、終了時に破棄します。
+
+このコードの模擬テスト：`node --test client.test.mjs`。テストファイルは公開予定ファイルには含めません。

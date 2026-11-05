@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; connect-src https://openapi.rakuten.co.jp; base-uri 'none'; form-action 'none'">
+  <title>商品情報の読取ページ</title>
+  <style>body{font:17px/1.8 system-ui,sans-serif;max-width:680px;margin:64px auto;padding:24px;color:#243043}h1{font-size:26px}main{border:1px solid #dae0e7;padding:28px;border-radius:12px}a{color:#155d99}</style>
+</head>
+<body>
+  <main>
+    <h1>商品情報の読取ページ</h1>
+    <p>このページには、楽天の認証キーや投稿履歴は含まれていません。</p>
+    <p id="status" role="status">読み込んでいます。</p>
+    <!-- Rakuten Web Services Attribution Snippet FROM HERE -->
+    <a href="https://developers.rakuten.com/" target="_blank">Supported by Rakuten Developers</a>
+    <!-- Rakuten Web Services Attribution Snippet TO HERE -->
+  </main>
+  <script type="module" src="./client.mjs"></script>
+</body>
+</html>
